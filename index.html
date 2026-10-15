@@ -1,98 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Work For Form</title>
-<link rel="icon" href="boy pic.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background: linear-gradient(135deg, #74ebd5, #9face6); height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .container { background: #ffffff; width: 100%; max-width: 400px; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+        h2 { text-align: center; color: #4a4a4a; margin-bottom: 20px; }
+        label { font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: #555; }
+        input[type="email"], input[type="password"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; transition: 0.3s; }
+        input:focus { border-color: #9face6; outline: none; box-shadow: 0 0 8px rgba(159, 172, 230, 0.5); }
+        .btn-group { display: flex; gap: 15px; margin-top: 25px; }
+        input[type="submit"], input[type="reset"] { width: 50%; padding: 12px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        input[type="submit"] { background: #4CAF50; color: white; }
+        input[type="submit"]:hover { background: #45a049; }
+        input[type="reset"] { background: #f44336; color: white; }
+        input[type="reset"]:hover { background: #da190b; }
+        .links { text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; }
+        .links a { color: #3498db; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .links a:hover { text-decoration: underline; color: #2980b9; }
+    </style>
 </head>
-<h1><marquee direction="down">Make A Form</marquee></h1>
-<fieldset>
-<Table>
-<Form >
-<tr>
-<legend>Personal Details</legend>
-<tr>
-<td><label>Full Name*:</label></td>
-<td><input type="text" name="fname" required placeholder="First Name"></td>
-<td><input type="text" name="fname" required placeholder="Middle Name"></td>
-<td><input type="text" name="fname" required placeholder="Last Name"></td>
-</tr><br><br>
-<!--number-->
-<tr>
-<td><label>Moble Number*:</label></td>
-<td><input type="Number" name="Number" maxlength="10" required placeholder="Number"><br></td>
-</tr>
-<!--email-->
-<tr>
-<td><label>Enter Your Email*:</label></td>
-<td><input type="email" name="email" required placeholder="Gmail"><br></td>
-</tr>
-<!--Password-->
-<tr>
-<td><label>Password*:</label></td>
-<td><input type="Password" name="pass" required placeholder="Password"><br></td>
-</tr>
-<!--number-->
-<tr>
-<td><label>Age:</label></td>
-<td><input type="Number" name="Number" min="01" max="31" placeholder="Day">
-<input type="Number" name="Number" min="01" max="12" placeholder="Month"><td>
-<input type="Number" name="Number" min="1900" max="2026" placeholder="Year">
-<td><label>Gender:</label>
-<label>Male:</label></td>
-<td><input type="radio" name="Number"></td>
-<td><label>Female:</label></td>
-<td><input type="radio" name="Number"><br></td>
-</tr>
-<tr>
-<td><label>serviec:</label>
-<select name="serviec">
-<option>IAS</option>
-<option>IPS</option>
-<option>IRS</option>
-<option>IFS</option>
-<option disabled selected>OTHER</option></td>
-</tr>
+<body>
 
-<tr</select ><br><br>
-<td><textarea rows=""5cols="25" placeholder="Enter Your Problem"></textarea><br><br></td>
-<td><input type="file"></td>
+    <div class="container">
+        <h2>LOGIN PAGE</h2>
+        
+        <form id="loginForm">
+            <label>Email*:</label>
+            <input type="email" id="login_email" required placeholder="example@gmail.com">
+            
+            <label>Password*:</label>
+            <input type="password" id="login_pass" required placeholder="Enter Password">
+            
+            <div class="btn-group">
+                <input type="reset" value="Reset">
+                <input type="submit" value="LOGIN">
+            </div>
+        </form>
 
-</tr>
-<!--reset-->
-<tr>
-<td><input type="reset">
-<!--submit-->
-<input type="submit" value="Register"></td>
-</tr>
-</Table>
-</form> 
-</fieldset>
-<BR><br>
-<h2><mark>LOGIN PAGE</mark></h2><br>
-<a href="ROG.jpg" target="blank">Photo</a> More datalist<br><br><br>
-<a href="Table.html" target="blank">Form Page</a> More datalist<br><br><br>
+        <!-- ADD DETAILS LINK JO DUSRE PAGE PAR LE JAYEGA -->
+        <div class="links">
+            <a href="register.html">➕ Add Details (Make a Form)</a>
+        </div>
+    </div>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let email = document.getElementById('login_email').value;
+            alert('✅ Login Successful for: ' + email);
+        });
+    </script>
 
-<fieldset>
-<table>
-<Form>
-<tr>
-<legend>Login Details</legend>
-<!--email-->
-<tr>
-<td><label>Email*:</label></td>
-<td><input type="email" name="email" required placeholder="Gmail"><br><br></td>
-<!--Password-->
-<tr>
-<td><label>Password*:</label></td>
-<td><input type="Password" name="pass" required placeholder="Password"><br><br></td>
-</tr>
-<!--reset-->
-<tr>
-<td><input type="reset"></td>
-<!--submit-->
-<td><input type="submit" value="LOGIN"></td></tr>
-
-</table>
-</form>
-</fieldset>
+</body>
 </html>
