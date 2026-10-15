@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make A Form</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background: linear-gradient(135deg, #74ebd5, #9face6); color: #333; padding: 20px; display: flex; justify-content: center; }
+        .container { background: #ffffff; width: 100%; max-width: 650px; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+        h1 { text-align: center; color: #4a4a4a; margin-bottom: 20px; }
+        legend { font-size: 1.2em; font-weight: bold; color: #2c3e50; margin-bottom: 15px; border-bottom: 2px solid #74ebd5; padding-bottom: 5px; width: 100%; }
+        label { font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: #555; }
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], select, textarea, input[type="file"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; transition: 0.3s; }
+        input:focus, select:focus, textarea:focus { border-color: #9face6; outline: none; box-shadow: 0 0 8px rgba(159, 172, 230, 0.5); }
+        .flex-row { display: flex; gap: 10px; }
+        .radio-group { display: flex; gap: 15px; align-items: center; margin-top: 5px; }
+        .btn-group { display: flex; gap: 15px; margin-top: 25px; }
+        input[type="submit"], input[type="reset"] { width: 50%; padding: 12px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        input[type="submit"] { background: #4CAF50; color: white; }
+        input[type="submit"]:hover { background: #45a049; }
+        input[type="reset"] { background: #f44336; color: white; }
+        input[type="reset"]:hover { background: #da190b; }
+        .back-link { text-align: center; margin-bottom: 20px; }
+        .back-link a { color: #e74c3c; text-decoration: none; font-weight: bold; }
+        .back-link a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- BACK TO LOGIN BUTTON -->
+        <div class="back-link">
+            <a href="login.html">⬅ Back to Login Page</a>
+        </div>
+
+        <h1>Make A Form</h1>
+        <form id="registerForm">
+            <fieldset style="border: none;">
+                <legend>Personal Details</legend>
+                
+                <label>Full Name*:</label>
+                <div class="flex-row">
+                    <input type="text" id="fname" required placeholder="First Name">
+                    <input type="text" id="mname" placeholder="Middle Name">
+                    <input type="text" id="lname" required placeholder="Last Name">
+                </div>
+
+                <label>Mobile Number*:</label>
+                <input type="tel" id="mobile" pattern="[0-9]{10}" required placeholder="10-digit Mobile Number">
+
+                <label>Enter Your Email*:</label>
+                <input type="email" id="email" required placeholder="example@gmail.com">
+
+                <label>Password*:</label>
+                <input type="password" id="pass" required placeholder="Create a strong password">
+
+                <label>Date of Birth:</label>
+                <div class="flex-row">
+                    <input type="number" min="1" max="31" placeholder="Day">
+                    <input type="number" min="1" max="12" placeholder="Month">
+                    <input type="number" min="1900" max="2026" placeholder="Year">
+                </div>
+
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" name="gender" id="male" value="Male" required> <label for="male" style="margin:0;">Male</label>
+                    <input type="radio" name="gender" id="female" value="Female"> <label for="female" style="margin:0;">Female</label>
+                </div>
+
+                <label>Service:</label>
+                <select id="service">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="IAS">IAS</option>
+                    <option value="IPS">IPS</option>
+                    <option value="IRS">IRS</option>
+                    <option value="IFS">IFS</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+
+                <label>Problem Description:</label>
+                <textarea id="problem" rows="4" placeholder="Enter Your Problem Here..."></textarea>
+
+                <label>Upload Document:</label>
+                <input type="file" id="uploadFile">
+
+                <div class="btn-group">
+                    <input type="reset" value="Clear Form">
+                    <input type="submit" value="Register Now">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let firstName = document.getElementById('fname').value;
+            alert('🎉 Registration Successful!\n\nWelcome, ' + firstName + '. Your details have been saved.');
+            this.reset(); 
+        });
+    </script>
+
+</body>
+</html>
